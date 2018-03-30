@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -200px;
+            margin-top: -250px;
+            width: 400px;
+            height: 500px;
+            border: 1px solid #ccc;
+        }
+        .btn{
+           position: absolute;
+           right: 0;
+           margin: 10px; 
+        }
+    </style>
+</head>
+<body>
+    <script src="jquery-3.3.1.js"></script>
+    <button class="show">按钮</button>
+   <script>
+        var oBox = $('<div >');
+        oBox.addClass('box');
+        $('body').append(oBox);
+        var oBtn = $('<button>X</button>');
+        oBtn.appendTo(oBox)
+             .addClass('btn');
+        $('.show').on('click', function () {
+            $('.box').css('display','block');
+        })
+        $('.btn').on('click', function () {
+            $('.box').css('display', 'none');
+        })
+  
+   </script>
+
+</body>
+</html>
